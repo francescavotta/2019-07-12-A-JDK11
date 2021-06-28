@@ -50,6 +50,17 @@ public class FoodController {
     void doCreaGrafo(ActionEvent event) {
     	txtResult.clear();
     	txtResult.appendText("Creazione grafo...");
+    	int porzioni;
+    	try {
+    		porzioni = Integer.parseInt(this.txtPorzioni.getText());
+    		txtResult.appendText(model.creaGrafo(porzioni));
+    		
+    	}catch(NumberFormatException nfe) {
+    		txtResult.appendText("Inserire numero valido");
+        	
+    		return;
+    	}
+    	
     }
     
     @FXML
